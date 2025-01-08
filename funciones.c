@@ -78,7 +78,7 @@ int encontrarFacturaByCedula(int cedula) {
 
     struct Factura factura;
     while (fread(&factura, sizeof(struct Factura), 1, file) == 1) {
-        if (factura.cedula == cedula) {
+        if (factura.cedula == cedula && factura.estado == 1) {
             f = 1;
             printf("Factura encontrada\n");
             printf("Nombre: %s\n", factura.nombre);
